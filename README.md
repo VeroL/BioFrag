@@ -11,13 +11,21 @@ and local configuration. Our EI measure may be used as a local proxy for fragmen
 The Edge_response software computes a map of EI from a map of a continous variable representing land cover (e.g. % Tree Cover).
 
 Other novel tools include:
+
 -automated classification of species abundance patterns in response to EI and land cover
+
 -mapping of predicted species abundances from EI and land cover
+
 -computation of species response metrics: impact of fragmentation on species abundance, and species sensitivity to EI
+
 -computation of landscape metrics: configuration and amount of edge effects
 
 Edge_response software is implemented in Matlab 2012a and distributed with the Matlab Runtime environment.
 
-24/08/2016 - Spatial methods developement and implementation by Dr Véronique Lefebvre, Dr Marion Pfeifer and Dr. Robert Ewers
+
+24/08/2016 
+Spatial methods developement and implementation by Dr Véronique Lefebvre, Dr Marion Pfeifer and Dr. Robert Ewers
+
 Forest Ecology and Conservation lab
+
 Imperial College London
