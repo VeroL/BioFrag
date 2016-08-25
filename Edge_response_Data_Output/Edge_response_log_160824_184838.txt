@@ -1,0 +1,46 @@
+Hello, to perform the Edge Response analysis you will be asked to select the following files: 
+1) a species abundance matrix, please refer to help manual for format. abundances may be normalised 
+2) a list of census point coordinates, either lat / lon or x/y, in a specific format, please refer to manual for format info 
+3) a projected map of your landscape in GeoTIFF format. The map should contain continuous variations of a single variable (e.g. Tree Cover, NDVI or LAI) representing habitat suitability, scaled from 0 to 100. Categorical maps should be transformed to fit this format, please refer to manual 
+4) optional: a binary map in GeoTIFF format where 1 = non habitat (e.g. water, road, urban, and 0 = any natural habitat (grassland, plantation, forest..) 
+Press OK if your input files are in the correct format and you wish to proceed, otherwise Cancel 
+Imported and stored Point Cover map from file: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_TreeCover.tif 
+Imported and stored mask map from file: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_nonhabitatmask.tif 
+Imported census points from file: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_Plot.csv 
+Imported species matrix from file: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_species_matrix.csv 
+Files D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_Plot.csv and D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_species_matrix.csv have been successfully checked and stored 
+* Edge response is computed using the following files: 
+-> Point Cover map: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_TreeCover.tif 
+-> mask map: NZ_South_nonhabitatmask.tif 
+-> Census point coordinates: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_Plot.csv 
+-> Species abudance matrix: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Input\NZ_South_species_matrix.csv 
+... computation of Binary map (to compute distance to nearest edge) 
+computed binary map with threshold 41 for map NZ_South_TreeCover 
+... computation of Distance to nearest Edge map (comparison only) 
+computed distance map for map NZ_South_TreeCover 
+... computation of Distance to nearest Edge for each census point (comparison only) 
+plot distances added for D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Matlab\NZ_South_Plot_plots.mat 
+... computation of Edge Influence map 
+A Depth of Edge Influence (DEI) of 500m has been selected to match the experimental design. 
+computed LC, SD, EI maps with Depth of Edge Influence = 500 for map NZ_South_TreeCover 
+... computation of Edge Influence for each census point + smoothed species abundance 
+plot PC and LCopt and HDopt added in plotLoc for D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Matlab\NZ_South_Plot_plots.mat 
+... smoothing each species abundance wrt PC/EI for NZ_South_species_matrix 
+species abundance smoothed wrt PC/EI for NZ_South_species_matrix 
+... computation of Training set of species Edge response 
+Training set of species Edge response was computed D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Matlab\AbPatRef.mat 
+... computation of assessment of census points distribution wrt PC and EI 
+computed plot ranges, pattern potential and abvalues saved as mat for NZ_South_Plot 
+... computation of species Edge response and Fragmentation Impact + saving figures. This operation may take a while but you can start reviewing already saved figures in: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Output 
+computed species category and FI for NZ_South_species_matrix 
+... generating output files tif and csv 
+Binary map exported to tif for NZ_South_TreeCover 
+Distance map exported to tif for NZ_South_TreeCover 
+EI map exported to tif for NZ_South_TreeCover 
+census points properties saved as CSV for NZ_South_Plot 
+species abundance smoothed wrt PC and EI saved as CSV for NZ_South_species_matrix 
+species category DEIopt saved as CSV for NZ_South_species_matrix 
+species POSTERIOR Matrix DEIopt saved as CSV for NZ_South_species_matrix 
+7 output files were generated in total, overwriteL = 0 and overwriteD = 0. 
+ ****** Edge response completed successfully for NZ_South_TreeCover, NZ_South_Plot, and NZ_South_species_matrix 
+You can view the Edge response outputs in D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Output. Bye for now 
