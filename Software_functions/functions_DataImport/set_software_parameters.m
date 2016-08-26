@@ -34,6 +34,7 @@ function param = set_software_parameters
     param.Distance2nE = '_Distance2nE.mat';
     param.LocalCover = '_LocalCover.mat';
     param.RespPCHD = '_RespPCHD.mat';
+    param.Landscape_metrics = '_Landscape_metrics.mat';
     param.AbPatRef = 'AbPatRef.mat';
     param.plotrange='_plotrange.mat';    
     param.patternpotential='_patternpotential.mat';
@@ -46,7 +47,8 @@ function param = set_software_parameters
     param.censuspoints_propertiesCSV = '_censuspoints_properties.csv';
     param.smoothAbundancePCEICSV = '_smoothAbundancePCEI.csv';
     param.species_categoryCSV = '_species_category.csv';
-    param.species_category_PP_CSV = '_species_category_posteriorprob.csv';  
+    param.species_category_PP_CSV = '_species_category_posteriorprob.csv'; 
+    param.Landscape_metricsCSV = '_Landscape_metrics.csv';
     
    
 end

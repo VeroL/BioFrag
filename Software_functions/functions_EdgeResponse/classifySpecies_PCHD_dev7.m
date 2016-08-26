@@ -28,7 +28,6 @@ function runvar = classifySpecies_PCHD_dev7(runvar, param)
         end
         
         %to make the figure also load:        
-        load(runvar.PCmap_matfile); %for PCmap
         load(runvar.plot_matfile); %for plot coordinates
         load(runvar.plotrange_matfile); %for dataset rating
 

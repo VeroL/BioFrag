@@ -27,8 +27,10 @@ computed LC, SD, EI maps with Depth of Edge Influence = 500 for map NZ_South_Tre
 plot PC and LCopt and HDopt added in plotLoc for D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Matlab\NZ_South_Plot_plots.mat 
 ... smoothing each species abundance wrt PC/EI for NZ_South_species_matrix 
 species abundance smoothed wrt PC/EI for NZ_South_species_matrix 
+... computation of landscape metrics 
+computed Landscape metrics for NZ_South_TreeCover 
 ... computation of Training set of species Edge response 
-Training set of species Edge response was computed D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Matlab\AbPatRef.mat 
+previously computed: Training set of species Edge response D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Matlab\AbPatRef.mat 
 ... computation of assessment of census points distribution wrt PC and EI 
 computed plot ranges, pattern potential and abvalues saved as mat for NZ_South_Plot 
 ... computation of species Edge response and Fragmentation Impact + saving figures. This operation may take a while but you can start reviewing already saved figures in: D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Output 
@@ -41,6 +43,7 @@ census points properties saved as CSV for NZ_South_Plot
 species abundance smoothed wrt PC and EI saved as CSV for NZ_South_species_matrix 
 species category DEIopt saved as CSV for NZ_South_species_matrix 
 species POSTERIOR Matrix DEIopt saved as CSV for NZ_South_species_matrix 
-7 output files were generated in total, overwriteL = 0 and overwriteD = 0. 
+Landscape metrics saved as CSV for NZ_South_TreeCover 
+8 output files were generated in total, overwriteL = 0 and overwriteD = 0. 
  ****** Edge response completed successfully for NZ_South_TreeCover, NZ_South_Plot, and NZ_South_species_matrix 
 You can view the Edge response outputs in D:\Terragen\Main_projects\Software_Edge_response_runtime\Edge_response_Data_Output. Bye for now 

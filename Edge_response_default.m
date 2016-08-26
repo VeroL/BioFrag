@@ -20,7 +20,7 @@ function Edge_response_default()
     %otherwise write: runvar.import_plugin = [];
     
     %also add the theshold parameter for the distance map:
-    runvar.PCT = []; %computed automaticcaly
+    runvar.PCT = []; %computed automatically
     %otherwise write: runvar.PCT = [];
     runvar.DEI = [];
     
@@ -53,6 +53,7 @@ function Edge_response_default()
     runvar.Distmap_matfile = [];
     runvar.LCmap_matfile = [];
     runvar.RespPCHD_matfile = [];
+    runvar.Landscape_metrics_matfile = [];
     runvar.AbPatRef_matfile = [];
     runvar.plotrange_matfile = [];
     runvar.patternpotential_matfile = [];

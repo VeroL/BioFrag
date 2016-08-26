@@ -54,11 +54,13 @@ function Edge_response_ExecSequence(runvar)
         msg = '... computation of Distance to nearest Edge for each census point (comparison only)'; dispwrite_log(runvar, param, msg)
         runvar = getPlotDistances(runvar, param);
 
-%4) compute EI map and plot smooth abundances for PCEI values
+%4) compute EI map, smooth abundances at plot locations for PCEI values, and landscape metrics
         msg = '... computation of Edge Influence map'; dispwrite_log(runvar, param, msg)
-        runvar = MakeEIMap(runvar, param);
+        runvar = MakeEIMapIO(runvar, param);
         msg = '... computation of Edge Influence for each census point + smoothed species abundance'; dispwrite_log(runvar, param, msg)
         runvar = getPlotAbPCEI(runvar, param);
+        msg = '... computation of landscape metrics'; dispwrite_log(runvar, param, msg)
+        runvar = getLandscape_metrics(runvar, param);
 
 %5) construct training set patterns for PCHD (if file in Matlab folder does not already exists)
         msg = '... computation of Training set of species Edge response'; dispwrite_log(runvar, param, msg)

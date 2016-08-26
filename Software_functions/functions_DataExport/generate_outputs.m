@@ -33,6 +33,7 @@ function generate_outputs(runvar, param)
     main_category_list = AbPatRef_properties.main_category_list;
     load(runvar.plot_matfile); %for plot coordinates and name + store distances + plot row and cols
     load(runvar.RespPCHD_matfile); %for plot PC and HD and smooth abs 
+    load(runvar.Landscape_metrics_matfile); %for landscape metrics
     
     nbspecs = length(species.names);
     
@@ -94,10 +95,10 @@ function generate_outputs(runvar, param)
     end
     
     
-    %------------------------------------ (+ plot PC, EI, dist, row and col, X and Y):
     
     
-    
+    %------------------------------------ plot properties CSV (+ plot PC, EI, dist, row and col, X and Y):
+      
     % CSV plotfilename_DEI300_censuspoints_properties.csv ------- plot names, x, y, row, col, dist, pc, ei
     
     %filename:
@@ -107,7 +108,7 @@ function generate_outputs(runvar, param)
     if ~exist(csvfile,'file') || overwriteD
     
         
-        %------------save csv file - Resp to PCHD for OPTIMAL DEI only
+        %------------save csv file - plot properties
 
         headerline = {'Plot name','X','Y','row','column','Distance','Point Cover','Edge Influence'};
 
@@ -132,7 +133,7 @@ function generate_outputs(runvar, param)
     
     
     
-    %------------------------------------ smooth species response wrt PCHD CSV for DEI opt (+ plot names):
+    %------------------------------------ smooth species response wrt PCHD CSV  (+ plot names):
     
     % CSV speciesfilename_DEI300_smoothAbundancePCEI.csv ------- smoothed species matrix and plot names
     
@@ -140,10 +141,9 @@ function generate_outputs(runvar, param)
     csvfile = fullfile(runvar.folder_Data_Output,[runvar.species_name '_DEI' num2str(DEI) param.smoothAbundancePCEICSV]);
     
     %if the file does not exist - or if it does but overwrite is set to 1
-    if ~exist(csvfile,'file') || overwriteD
-    
+    if ~exist(csvfile,'file') || overwriteD    
         
-        %------------save csv file - Resp to PCHD for OPTIMAL DEI only
+        %------------save csv file - Resp to PCHD 
 
         headerline = ['Plot name' species.names'];
 
@@ -166,7 +166,7 @@ function generate_outputs(runvar, param)
     
     
     
-    %------------------------------------species category and posterior probabilities for DEIopt
+    %------------------------------------species category CSV
    
     % CSV speciesfilename_DEI300_species_category.csv ------- category and FI for DEI optimum +dataset rating
     
@@ -174,10 +174,9 @@ function generate_outputs(runvar, param)
     csvfile = fullfile(runvar.folder_Data_Output,[runvar.species_name '_DEI' num2str(DEI) param.species_categoryCSV]);
     
     %if the file does not exist or if it does but overwrite is set to 1
-    if ~exist(csvfile,'file') || overwriteD
-  
+    if ~exist(csvfile,'file') || overwriteD  
         
-        %------------save csv file - species category for OPTIMAL DEI only
+        %------------save csv file - species category 
 
         headerline = {'Species name','Habitat','EIPref','Category','Posterior prob', 'Pattern Label', 'DEI opt','mean abundance', ...
              'median abundance','fragmentation impact','EI sensitivity','dataset rating'} ;
@@ -209,6 +208,10 @@ function generate_outputs(runvar, param)
     end
        
     
+    
+    
+    %------------------------------------species posterior probabilities CSV
+    
     % CSV speciesfilename_DEI300_species_category_posteriorprob.csv ------- posterior prob for DEI optimum
     
     %filename:
@@ -216,10 +219,9 @@ function generate_outputs(runvar, param)
        
     
     %if the file does not exist or if it does but overwrite is set to 1
-    if ~exist(csvfile,'file') || overwriteD
-               
+    if ~exist(csvfile,'file') || overwriteD               
                 
-        %------------save csv file - posterior probs for OPTIMAL DEI only
+        %------------save csv file - posterior probs 
         
         headerline = ['Species name' main_category_list'] ;
 
@@ -239,7 +241,43 @@ function generate_outputs(runvar, param)
         nbgenfiles = nbgenfiles + 1;
     end
     
-    msg=[num2str(nbgenfiles) ' output files were generated in total, overwriteL = ' num2str(overwriteL) ' and overwriteD = ' num2str(overwriteD) '.']; dispwrite_log(runvar, param, msg)
+    
+    
+    %------------------------------------ landscape metrics and landscape input filenames :
+      
+    % CSV PCmapfilename_Landscape_metrics.csv ------- PCmap file name, watermask file name, DEI, habitat amount (in ha), configuration index, core score
+    
+    %filename:
+    csvfile = fullfile(runvar.folder_Data_Output,[runvar.PCmap_name '_DEI' num2str(DEI) param.Landscape_metricsCSV]);
+    
+    %if the file does not exist - or if it does but overwrite is set to 1
+    if ~exist(csvfile,'file') || overwriteD    
+        
+        %------------save csv file - landscape metrics
+
+        headerline = {'Land Cover map','Non-habitat mask','DEI (in m)','habitat amount (in ha)','configuration index','core score'};
+
+        %raw matrix
+        cellSummary = {runvar.PCmap_name, runvar.mask_name, DEI, Landscape_metrics.PC_amount, Landscape_metrics.PC_CI, Landscape_metrics.PC_Corescore};
+        
+        %add header lines:
+        cellSummary = [headerline; cellSummary];
+        
+        %export as CSV file
+        exportas_CSV(cellSummary,csvfile);
+        clear cellSummary;
+
+        msg=['Landscape metrics saved as CSV for ' runvar.PCmap_name]; dispwrite_log(runvar, param, msg)
+        nbgenfiles = nbgenfiles + 1;
+    end
+    
+    
+    
+    
+    %----------------------- final msg
+    
+     msg=[num2str(nbgenfiles) ' output files were generated in total, overwriteL = ' num2str(overwriteL) ' and overwriteD = ' num2str(overwriteD) '.']; dispwrite_log(runvar, param, msg)
+    
     
 end %end of function
 
