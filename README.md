@@ -1,4 +1,4 @@
-# BioFrag
+﻿# BioFrag
 The BioFrag software is a collection of novel image processing and computational methods designed for Landscape Ecologists, to measure habitat framgentation and analyse its impact on species abundance and biodiversity from species census data and remotely sensed images.
 
 In an endeavour to improve on current methods used to assess habitat fragmentation we have developed a continuous
@@ -29,6 +29,6 @@ Edge_response software is implemented in Matlab 2012a and distributed with the M
 
 Spatial methods developement and implementation by Dr Véronique Lefebvre, Dr Marion Pfeifer and Dr. Robert Ewers
 
-Forest Ecology and Conservation lab
+Forest Ecology and Conservation group : http://forestecology.net/
 
 Imperial College London
