@@ -41,7 +41,8 @@ function [plotLoc, headerline_ok] = importPlotCoords(pathPlotCsv)
     headerline_ok = true;
     
     %read the csv file - store into a cell array (each comma separatedvalue in individual cell
-    [~,~,cellcsv] = xlsread(pathPlotCsv);
+    %[~,~,cellcsv] = xlsread(pathPlotCsv);
+    cellcsv = csvimport(pathPlotCsv);
     
     %the format of the csv file is assumed to be either:
     % plot name | lat | lon

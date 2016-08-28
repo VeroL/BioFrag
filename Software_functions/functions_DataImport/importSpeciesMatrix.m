@@ -22,7 +22,8 @@
 function species = importSpeciesMatrix(pathSpeciesCsv)
 
     %read the csv file - store into a cell array (each comma separatedvalue in individual cell
-    [~,~,cellcsv] = xlsread(pathSpeciesCsv);
+    %[~,~,cellcsv] = xlsread(pathSpeciesCsv);
+    cellcsv = csvimport(pathSpeciesCsv);
     
     %the format of the csv file is assumed to be:
     % plot      | species name 1 | species name 2 | ..
